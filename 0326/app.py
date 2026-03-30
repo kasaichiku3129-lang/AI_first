@@ -1,6 +1,6 @@
 import streamlit as st
 from langchain_openai import ChatOpenAI
-from langchain.schema import (SystemMessage, HumanMessage, AIMessage)
+from langchain_core.messages import (SystemMessage, HumanMessage, AIMessage)
 
 def select_model():
     """サイドバーの入力を読み取って、設定済みのLLMインスタンスを返す関数"""
@@ -31,7 +31,7 @@ def main():
     )
     
     # 1. サイドバーで設定したモデルを取得（ここが重要！）なんです
-    
+
     llm = select_model()
 
     st.header("My Great ChatGPT 🤗")
